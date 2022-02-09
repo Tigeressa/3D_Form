@@ -1,0 +1,118 @@
+:root {
+    --main-colour: #d99d28;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+    font-size: 72.5%;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.3)),  url("images/background.jpg") center no-repeat;
+    background-size: cover;
+    perspective: 100rem;
+}
+
+.form-wrap {
+    /*to centre the form */
+    transform-style: preserve-3d;
+    position: absolute;
+    top: calc(50% - 17.5rem);
+    left: calc(50% - 25rem);
+    transform: rotateY(10deg);
+    transition: transform 1s, left 1s;
+}
+
+.form-wrap.change {
+    transform: rotateY(100deg);
+    left: calc(50% + 25rem);
+    
+}
+
+.form-wrap form {
+    position: absolute;
+    width: 50rem;
+    height: 35rem;
+    background: var(--main-colour);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0.1rem 0.1rem 0.1rem #ccc inset,
+    -0.1rem -0.1rem 0.1rem #ccc inset;
+}
+
+.signup {
+    transform: rotateY(270deg) translateZ(25rem) translateX(-25rem);
+}
+
+form a {
+    position: absolute;
+    top: 2rem;
+    background-color: #797c7e;
+    color: seashell;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.signin-btn {
+    right: 2rem;
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    border-radius:  0.5rem 100% 100% 0.5rem;
+    background-color: #fff;
+    color: var(--main-colour);
+}
+
+.signup-btn {
+    left: 2rem;
+    padding: 0.5rem 1rem 0.5rem 3rem;
+    border-radius: 100% 0.5rem 0.5rem 100%;
+    background-color: crimson;
+}
+
+form h2 {
+    font-size: 2.3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.inputs-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs-wrap input {
+    width: 25rem;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    color: #fff;
+    background-color: transparent;
+    border: 0.1rem solid #fff;
+    border-radius: 5rem;
+    outline: none;
+}
+
+.inputs-wrap input::placeholder {
+    color: #fff;
+    font-weight: 300;
+}
+
+.inputs-wrap input[type="submit"] {
+    background-color: #fff;
+    color: var(--main-colour);
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+}
